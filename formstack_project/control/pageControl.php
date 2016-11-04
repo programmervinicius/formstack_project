@@ -1,10 +1,12 @@
 <?php
 
-class pageControl{
+class pageControl extends ViewClass{
 
-    fucntion home(){
-        echo "Welcome!";
-    
+    function home(){
+        include_once "model/page_mode.php";
+        $obj = new PageMode();
+        $this->assign("users", $obj->getData());
+        
     }
 }
 
